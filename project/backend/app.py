@@ -4,6 +4,8 @@ from db import get_db
 import math
 from datetime import datetime, timedelta
 import os 
+from db import init_db
+
 
 app = Flask(__name__)
 CORS(app)
@@ -318,6 +320,12 @@ def top_used_medicines():
 
     return jsonify([dict(row) for row in data])
 
-port = int(os.environ.get("PORT", 5000))
 if __name__ == "__main__":
+
+    init_db()
+    
+    port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+    
+    
+ 
