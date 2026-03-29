@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Issue Medicine</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>💊 Issue Medicine</h1>
+
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="students.html">Students</a>
+      <a href="issue.html">Issue Medicine</a>
+      <a href="history.html">History</a>
+      <a href="#" onclick="toggleTheme()">🌙 Theme</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <div class="section">
+      <h2>📝 Issue Form</h2>
+
+      <div class="flex">
+        <select id="studentSelect"></select>
+        <select id="medicineSelect"></select>
+        <input type="number" id="issueQty" placeholder="Quantity">
+        <input type="text" id="reason" placeholder="Reason (Fever/Cold)">
+        <button onclick="issueMedicine()">Issue</button>
+      </div>
+
+      <p id="studentInfo" style="margin-top:15px; font-weight:bold;"></p>
+    </div>
+
+    <div class="section">
+      <h2>📦 Current Medicine Stock</h2>
+      <div class="medicine-grid" id="medicineGrid"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+  <script src="issue.js"></script>
+</body>
+</html>

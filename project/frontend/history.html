@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>📜 Issue History</h1>
+
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="students.html">Students</a>
+      <a href="issue.html">Issue Medicine</a>
+      <a href="history.html">History</a>
+      <a href="#" onclick="toggleTheme()">🌙 Theme</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <div class="section">
+      <h2>🔍 Filter History</h2>
+
+      <div class="flex">
+        <input type="text" id="searchHistory" placeholder="Search by student / roll / medicine" oninput="searchHistory()">
+        <button onclick="exportCSV()">⬇ Export CSV</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>📋 History Records</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Student</th>
+            <th>Roll</th>
+            <th>Room</th>
+            <th>Medicine</th>
+            <th>Qty</th>
+            <th>Reason</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+
+        <tbody id="historyTable"></tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+<script src="history.js"></script>
+
+</body>
+</html>
