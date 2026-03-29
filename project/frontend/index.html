@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Hostel Medicine</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1 class="logo-title">
+        <img src="Images/icon2.png" alt="Dashboard Icon" class="header-icon">
+        MediTrack
+      </h1>
+
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="students.html">Students</a>
+      <a href="issue.html">Issue Medicine</a>
+      <a href="history.html">History</a>
+      <a href="#" onclick="toggleTheme()"> Theme</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <div class="section">
+      <h1 class="logo-title">
+        <img src="Images/icons8-dashboard-50.png" alt="Dashboard Icon" class="header-icon">
+        Dashboard
+      </h1>
+
+      <div class="stats">
+        <div class="stat-card">
+          <h3 id="totalMeds">0</h3>
+          <p>Total Medicines</p>
+        </div>
+
+        <div class="stat-card">
+          <h3 id="totalStock">0</h3>
+          <p>Total Stock</p>
+        </div>
+
+        <div class="stat-card danger">
+          <h3 id="lowStock">0</h3>
+          <p>Low Stock</p>
+        </div>
+
+        <div class="stat-card warning">
+          <h3 id="expiringSoon">0</h3>
+          <p>Expiring Soon</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Medicine -->
+    <div class="section">
+      <h2>➕ Add New Medicine</h2>
+
+      <div class="flex">
+        <input type="text" id="medName" placeholder="Medicine Name">
+        <input type="number" id="medQty" placeholder="Quantity">
+        <input type="date" id="medExpiry">
+        <button onclick="addMedicine()">Add Medicine</button>
+      </div>
+    </div>
+
+    <!-- Medicine List -->
+    <div class="section">
+      <h2>💊 Medicine Stock List</h2>
+      <div class="medicine-grid" id="medicineGrid"></div>
+    </div>
+
+    <!-- AI Restock Insights -->
+    <div class="section">
+      <h2>🤖 Low Stock Medicines</h2>
+      <div id="predictionGrid" class="medicine-grid"></div>
+    </div>
+   
+    <!-- Top Used Medicines Chart -->
+    <div class="section">
+      <h2>📊 Top Used Medicines</h2>
+      <canvas id="usageChart"></canvas>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="index.js"></script>
+
+
+</body>
+</html>
